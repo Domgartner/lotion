@@ -1,0 +1,398 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+#head-area {
+  display: grid;
+  position: fixed;
+  grid-template-columns: 1fr 20fr 1fr;
+  border-bottom: 1px solid rgb(215, 215, 215);
+  z-index: 999;
+  background-color: rgb(255, 255, 255, 0.95);
+}
+.dark-mode-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 35px;
+  font-size: 40px;
+  padding-left: 25px;
+}
+html.dark-mode {
+  background-color: rgb(24, 24, 24);
+}
+
+#root.dark-mode .note-edit-body {
+  background-color: rgb(24, 24, 24);
+}
+#root.dark-mode .notes-list-cont {
+  background-color: rgb(24, 24, 24);
+}
+.dark-mode-btn:hover {
+  background-color: rgb(72, 76, 104);
+  cursor: pointer;
+  color: white;
+}
+#root.dark-mode .ql-editor {
+  color: white;
+}
+#root.dark-mode .ql-editor.ql-blank::before {
+  color: white;
+}
+#root.dark-mode {
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+#root.dark-mode #head-area{
+  background-color: rgb(24, 24, 24, 0.95);
+}
+#root.dark-mode #head-area .minor-title{
+  color: rgb(134, 134, 134);
+}
+#root.dark-mode .ql-container {
+  color: white;
+}
+#root.dark-mode .ql-toolbar .ql-stroke {
+  fill: none;
+  stroke: #fff;
+}
+#root.dark-mode .ql-toolbar .ql-fill {
+  fill: #fff;
+  stroke: none;
+}
+#root.dark-mode .ql-toolbar .ql-picker {
+  color: #fff;
+}
+#root.dark-mode .input-container input[type="text"] {
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+#root.dark-mode .input-container input[type="datetime-local"] {
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+#root.dark-mode ::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+#root.dark-mode .ql-toolbar .ql-picker-options .ql-picker-item {
+  color: black;
+}
+#root.dark-mode .search-area input{
+  background-color: rgb(221, 221, 221);
+}
+
+.main-title, .minor-title {
+  text-align: center;
+}
+.titles {
+  margin-top: 10px;
+  padding-bottom: 12px;
+}
+.main-title {
+  font-size: 50px;
+  margin: 0 10px 0 0;
+}
+.minor-title {
+  color: rgb(73, 73, 73);
+  margin: 0;
+}
+.menu-icon-container {
+  height: 100%;
+}
+.menu-icon {
+  font-size: 50px;
+  padding-left: 5px;
+  padding-right: 10px;
+  width: 90px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-icon:hover {
+  background-color: rgb(72, 76, 104);
+  cursor: pointer;
+  color: white;
+}
+.main-body {
+  padding-top: 100px;;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+  height: 100vh;
+  width: 100vw;
+}
+.main-body.full {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+.notes-list-cont {
+  border-right: 1px solid rgb(215, 215, 215);
+  height: 100%;
+}
+.notes-list-body {
+  overflow-y: scroll;
+  max-height: 920px;
+}
+.active {
+  background-color: rgb(72, 76, 104);
+  color: white;
+}
+.notes-head {
+  border-bottom: 1px solid rgb(215, 215, 215);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  position: relative; 
+}
+.plus-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plus-container:hover {
+  background-color: rgb(72, 76, 104);
+  cursor: pointer;
+  color: white;
+}
+.notes-head h2, .notes-head i {
+  font-size: 35px;
+}
+#no-notes {
+  margin-top: 30px;
+  font-size: 24px;
+  text-align: center;
+  color: rgb(135, 135, 135);
+}
+#results-found {
+  margin-top: 30px;
+  font-size: 24px;
+  text-align: center;
+  color: rgb(135, 135, 135);
+  margin-bottom: 10px;
+}
+#default-body {
+  display: flex;
+  align-items: center;
+  margin-top: 500px;
+  justify-content: center;
+  font-size: 42px;
+  text-align: center;
+  color: rgb(135, 135, 135);
+}
+.note-edit-area {
+  display: grid;
+  grid-template-rows: 60px auto;
+  height: 100%;
+}
+.note-edit-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 55px 0;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+.note-edit-body {
+  grid-row-start: 2;
+  margin-top: 51px;
+  width: 100%;
+}
+.save-text {
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 40px;
+  overflow-y: scroll;
+  max-height: 900px;
+}
+.view-title {
+  font-size: 35px;
+  font-weight: 900;
+  margin-left: 40px;
+}
+.view-date {
+  font-size: 20px;
+  margin-left: 40px;
+}
+.note-date {
+  padding-left: 10px;
+  color: rgb(139, 139, 139);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+}
+.ql-toolbar {
+  border: none !important;
+  outline: none !important;
+  font-size: 30px;
+  width: 1565px !important;
+  border-bottom: 3px solid rgb(221, 221, 221) !important;
+}
+.main-body.full .ql-toolbar {
+  width: 2014px !important;
+}
+.ql-formats {
+  font-size: 30px !important;
+}
+.ql-container {
+  border: none !important;
+  outline: none !important;
+  font-size: 22px !important;
+  margin: 10px !important;
+  overflow-y: scroll !important;
+  max-height: 1000px;
+}
+.main-body.full .ql-container {
+  width: 2000px !important;
+  overflow-y: scroll !important;
+}
+.note-edit-head input[type="text"] {
+  border: none;
+  margin-left: 40px;
+  outline: none;
+  font-size: 34px;
+  flex: 1;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.note-edit-head input[type="datetime-local"] {
+  border: none;
+  font-family:'Courier New', Courier, monospace;
+  outline: none;
+  font-size: 22px;
+  margin-left: 40px;
+}
+textarea{
+  border: none;
+  outline: none;
+  font-size: 32px;
+  width: 100%;
+  text-align: start;
+}
+.note-edit-head h3 {
+  display: inline-block;
+  width: 50px; 
+  height: 90px; 
+  line-height: 90px; 
+  text-align: center; 
+}
+#save {
+  padding: 10px;
+  padding-right: 30px;
+  margin-left: 15px;
+}
+#delete {
+  padding-left: 30px;
+  margin-left: 15px;
+  margin-right: 20px;
+  padding: 10px;
+}
+.save-delete {
+  display: flex;
+  align-items: flex-end;
+}
+#save, #delete {
+  font-size: 24px;
+}
+#default-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 58px;
+  text-align: center;
+  color: rgb(135, 135, 135);
+  position: relative;
+  top: -400px;
+}
+.save-btn:hover {
+  background-color: rgb(72, 76, 104);
+  cursor: pointer;
+  color: white;
+}
+.delete-btn:hover {
+  background-color: rgb(72, 76, 104);
+  cursor: pointer;
+  color: white;
+}
+.note {
+  border-bottom: 1px solid rgb(215, 215, 215);
+  border-top: 1px solid rgb(215, 215, 215);
+  height: 120px;
+}
+.note:hover {
+  background-color: rgba(218, 221, 244, 0.838);
+}
+.note.active:hover {
+  background-color: rgb(72, 76, 104);
+}
+.note h2 {
+  font-size: 26px;
+  padding: 10px;
+}
+.note p {
+  padding: 10px;
+  margin-left: 5px;
+}
+.search-area {
+  width: 88%;
+  border-radius: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 24px;
+  /* outline: black solid 1px; */
+  border: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+}
+/* .search-area i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #a5a5a5;
+} */
+.search-area input {
+  flex: 1;
+  height: 40px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  padding: 0 15px;
+  outline: black solid 1px;
+  border: none;
+}
+
+.search-area button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+}
