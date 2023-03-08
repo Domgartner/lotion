@@ -3,14 +3,13 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 function Body({ activeNote, confirmDelete, onUpdateNote, setUserEditing, userEditing, notes, isNotesListVisible }) {
-  const [editedNote, setEditedNote] = useState(activeNote);
+  // const [editedNote, setEditedNote] = useState(activeNote);
   const [title, setTitle] = useState(activeNote?.title || 'Untitled');
   const [editedTitle, setEditedTitle] = useState(title);  
   const [currentBody, setCurrentBody] = useState('');
 
   useEffect(() => {
     if(activeNote){
-      setEditedNote(activeNote);
       setTitle(activeNote?.title || 'Untitled');
       setEditedTitle(activeNote?.title || 'Untitled');
       setCurrentBody(activeNote.formattedBody);}

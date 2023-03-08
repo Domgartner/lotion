@@ -58,7 +58,7 @@ function Sidebar({ notes, addNote, activeNote, setActiveNote, setUserEditing }) 
                     })}
                 </small>
                 <p>
-                  {note.body? note.body.length < 0? '...': `${note.body.substr(0, 45).replace(/<\/?[^>]+(>|$)/g, '')}` + '...': '...'}
+                  {note.body ? (note.body.length < 0 ? '...' : `${note.body.substr(0, 45).replace(/<\/?[^>]+(>|$)/g, '')}...`) : '...'}
                 </p>
               </div>
             </Link>

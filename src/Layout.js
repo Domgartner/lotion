@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import uuid from 'react-uuid';
 import Sidebar from "./Sidebar";
 import Body from "./Body";
-import { is } from "@babel/types";
 
 function Layout() {
     const [notes, setNotes] = useState(JSON.parse(localStorage.notes) || []);
