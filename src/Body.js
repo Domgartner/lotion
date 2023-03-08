@@ -2,13 +2,11 @@ import { useEffect, useState, useRef } from "react";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-function Body({ activeNote, confirmDelete, onUpdateNote, setUserEditing, userEditing, notes }) {
-  const [isNotesListVisible, setIsNotesListVisible] = useState(true);
+function Body({ activeNote, confirmDelete, onUpdateNote, setUserEditing, userEditing, notes, isNotesListVisible }) {
   const [editedNote, setEditedNote] = useState(activeNote);
   const [title, setTitle] = useState(activeNote?.title || 'Untitled');
   const [editedTitle, setEditedTitle] = useState(title);  
   const [currentBody, setCurrentBody] = useState('');
-  // const [date, setDate] = useState(new Date);
 
   useEffect(() => {
     if(activeNote){
