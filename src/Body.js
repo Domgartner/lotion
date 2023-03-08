@@ -112,7 +112,7 @@ function Body({ activeNote, confirmDelete, onUpdateNote, setUserEditing, userEdi
                 ['clean']
                 ],}}
             formats={[    "header",    "bold",    "italic",    "underline",    "strike",    "link", "color",  "list",    "bullet",    "clean",  ]}
-            style={{ fontSize: "25px", width: isNotesListVisible ? "76vw" : "inherit"}}/>
+            style={{ fontSize: "25px", width: isNotesListVisible ? "76vw" : "100vw"}}/>
       ):(
        <div className="save-text" dangerouslySetInnerHTML={{__html: activeNote.formattedBody}}></div>
       )}    
