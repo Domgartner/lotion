@@ -4,7 +4,12 @@ import Sidebar from "./Sidebar";
 import Body from "./Body";
 
 function Layout() {
-    const [notes, setNotes] = useState(JSON.parse(localStorage.notes) || []);
+    // const [notes, setNotes] = useState(JSON.parse(localStorage.notes) || []);
+    const localStorageNotes = localStorage.getItem('notes');
+const initialNotes = localStorageNotes ? JSON.parse(localStorageNotes) : [];
+
+const [notes, setNotes] = useState(initialNotes);
+
     const [isNotesListVisible, setIsNotesListVisible] = useState(true);
     const [activeNote, setActiveNote] = useState(false);
     const[userEditing,setUserEditing]=useState(true);
