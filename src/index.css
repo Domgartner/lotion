@@ -265,6 +265,7 @@ html.dark-mode {
 }
 .quill {
   width: inherit;
+  height: 100vh;
 }
 .note-edit-head input[type="text"] {
   border: none;
